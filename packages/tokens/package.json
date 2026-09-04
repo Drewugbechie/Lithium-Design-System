@@ -1,0 +1,15 @@
+{
+  "name": "@lithium/tokens",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-tokens.mjs"
+  },
+  "exports": {
+    "./theme.css": "./dist/theme.css",
+    "./tokens.json": "./dist/tokens.json",
+    "./figma-variables.json": "./dist/figma-variables.json"
+  },
+  "files": ["dist"]
+}

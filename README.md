@@ -1,24 +1,20 @@
-# Lithium Design System
+# Lithium UI
 
-Minimal React + Tailwind + Storybook starter for building a design system from
-Figma without extra framework layers.
+Lithium UI is an AI-native design-system foundation for humans and coding agents.
 
-## Scripts
+## Start locally
 
-- `npm run dev` starts the Vite app
-- `npm run storybook` starts Storybook on port `6006`
-- `npm run build` builds the app
-- `npm run build-storybook` builds the Storybook site
+```bash
+npm install
+npm run docs
+```
 
-## Project shape
+Open [http://localhost:3000](http://localhost:3000).
 
-- `src/components` contains design-system components and stories
-- `src/index.css` contains Tailwind import plus design tokens
-- `.storybook` contains the minimal Storybook config
+## Quality checks
 
-## Recommended workflow
+```bash
+npm run check
+```
 
-1. Define the smallest useful token set from Figma.
-2. Build one component at a time with a small prop API.
-3. Review states in Storybook before scaling the library.
-4. Add more variants only when product usage justifies them.
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for implemented boundaries and deferred work.

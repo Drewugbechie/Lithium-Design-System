@@ -1,0 +1,24 @@
+{
+  "name": "@lithium/docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "predev": "npm run build --workspace=@lithium/tokens && npm run build --workspace=@lithium/registry && npm run build --workspace=@lithium/ui",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "next typegen && tsc --noEmit"
+  },
+  "dependencies": {
+    "@lithium/registry": "file:../../packages/registry",
+    "@lithium/tokens": "file:../../packages/tokens",
+    "@lithium/ui": "file:../../packages/ui",
+    "next": "^15.5.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
+    "tailwindcss": "^4.1.12"
+  }
+}

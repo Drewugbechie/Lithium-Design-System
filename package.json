@@ -1,40 +1,36 @@
 {
-  "name": "lithium-design-system",
-  "private": true,
+  "name": "lithium-ui",
   "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+  "private": true,
+  "packageManager": "npm@10.9.3",
+  "engines": {
+    "node": ">=20"
   },
-  "dependencies": {
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build:foundations": "npm run build --workspace=@lithium/tokens && npm run build --workspace=@lithium/registry && npm run build --workspace=@lithium/ui",
+    "build": "npm run build:foundations && npm run build --workspace=@lithium/docs",
+    "dev": "npm run docs",
+    "docs": "npm run dev --workspace=@lithium/docs",
+    "typecheck": "npm run build:foundations && npm run typecheck --workspaces --if-present",
+    "lint": "eslint . --max-warnings=0",
+    "test": "npm run build:foundations && vitest run",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run build"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.4",
-    "@storybook/addon-a11y": "^10.3.5",
-    "@storybook/addon-docs": "^10.3.5",
-    "@storybook/react-vite": "^10.3.5",
-    "@tailwindcss/vite": "^4.2.4",
-    "@types/node": "^24.12.2",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "clsx": "^2.1.1",
-    "eslint": "^9.39.4",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "eslint-plugin-storybook": "^10.3.5",
-    "globals": "^17.5.0",
-    "storybook": "^10.3.5",
-    "tailwindcss": "^4.2.4",
-    "typescript": "~6.0.2",
-    "typescript-eslint": "^8.58.2",
-    "vite": "^8.0.9"
+    "@eslint/js": "^9.35.0",
+    "@next/eslint-plugin-next": "^15.5.2",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "eslint": "^9.35.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0",
+    "vitest": "^3.2.4"
   }
 }

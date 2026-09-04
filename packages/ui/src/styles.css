@@ -1,0 +1,21 @@
+@layer lithium {
+  :where([data-lithium-root]) {
+    color: var(--li-color-foreground);
+    background: var(--li-color-background);
+    font-family: var(--li-font-family-sans);
+  }
+
+  :where([data-lithium-root] :focus-visible) {
+    outline: 2px solid var(--li-color-focus);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :where([data-lithium-root] *, [data-lithium-root] *::before, [data-lithium-root] *::after) {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

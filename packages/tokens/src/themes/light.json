@@ -1,0 +1,17 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "color": {
+    "background": { "$type": "color", "$value": "{color.neutral.50}" },
+    "surface": { "$type": "color", "$value": "{color.neutral.0}" },
+    "surfaceRaised": { "$type": "color", "$value": "{color.neutral.0}" },
+    "foreground": { "$type": "color", "$value": "{color.neutral.950}" },
+    "muted": { "$type": "color", "$value": "{color.neutral.500}" },
+    "border": { "$type": "color", "$value": "{color.neutral.300}" },
+    "borderSubtle": { "$type": "color", "$value": "{color.neutral.100}" },
+    "accent": { "$type": "color", "$value": "{color.blue.600}" },
+    "focus": { "$type": "color", "$value": "{color.blue.600}" },
+    "success": { "$type": "color", "$value": "{color.green.500}" },
+    "warning": { "$type": "color", "$value": "{color.amber.500}" },
+    "danger": { "$type": "color", "$value": "{color.red.500}" }
+  }
+}
